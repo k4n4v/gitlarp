@@ -1,0 +1,42 @@
+{
+  "name": "gitlarp",
+  "version": "0.1.0",
+  "description": "Paint realistic GitHub contribution activity into a dedicated private repo",
+  "type": "module",
+  "bin": {
+    "gitlarp": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "server": "tsx server/index.ts",
+    "web:ui": "npm run dev --prefix web",
+    "web:install": "npm install --prefix web",
+    "web": "concurrently -k -n api,ui -c green,cyan \"npm run server\" \"npm run web:ui\"",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "github",
+    "commits",
+    "contribution",
+    "cli"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@hono/node-server": "^1.14.1",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "hono": "^4.7.5",
+    "simple-git": "^3.27.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
