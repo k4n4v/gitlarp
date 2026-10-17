@@ -1,6 +1,6 @@
 # gitlarp
 
-Paint realistic GitHub contribution activity into a dedicated private repo.
+Larp a realistic GitHub contribution activity on your profile into a dedicated private repo.
 
 gitlarp plans backdated commits over a date range, skips days that already have activity, randomly skips other days for realism, and always shows a dry-run preview before pushing.
 
